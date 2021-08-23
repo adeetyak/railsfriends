@@ -1,0 +1,19 @@
+<div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title"><%= @friends_lot.first_name %> <%= @friends_lot.last_name %></h5>
+    <p class="card-text">
+      E: <%= @friends_lot.email %><br/>
+      M: <%= @friends_lot.mobile %><br/>
+      IG: <%= @friends_lot.instagram %>
+    </p>
+
+  </div>
+</div>
+ <br/>
+
+<%= link_to 'Edit', edit_friends_lot_path(@friends_lot), class:"btn btn-secondary" %>
+
+<%= link_to 'Delete', @friends_lot, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+<%= link_to 'Back', friends_lots_path, class:"btn btn-dark"%>
+

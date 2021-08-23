@@ -1,0 +1,7 @@
+<h1>Edit A Friend</h1>
+
+<%= render 'form', friends_lot: @friends_lot %>
+<br>
+<%= link_to 'Show', @friends_lot, class:"btn btn-secondary" %>
+<%= link_to 'Delete', @friends_lot, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+<%= link_to 'Back', friends_lots_path, class:"btn btn-dark" %>

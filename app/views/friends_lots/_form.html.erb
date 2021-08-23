@@ -1,0 +1,36 @@
+<%= form_with(model: friends_lot) do |form| %>
+  <% if friends_lot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(friends_lot.errors.count, "error") %> prohibited this friends_lot from being saved:</h2>
+
+      <ul>
+        <% friends_lot.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field form-group" >
+    <%= form.text_field :first_name, class:"form-control",placeholder:"First Name" %><br>
+  </div>
+  <div class="field form-group">
+    <%= form.text_field :last_name, class:"form-control",placeholder:"Last Name" %><br>
+  </div>
+  <div class="field form-group">
+    <%= form.text_field :email, class:"form-control",placeholder:"Email" %><br>
+  </div>
+  <div class="field form-group">
+    <%= form.text_field :mobile, class:"form-control",placeholder:"Mobile" %><br>
+  </div>
+  <div class="field form-group">
+    <%= form.text_field :instagram, class:"form-control",placeholder:"Instagram" %>
+  </div>
+  <br>
+  <div class="field form-group">
+    <%= form.number_field :user_id, id: :friends_lot_user_id, class:"form-control",value:current_user.id, type: :hidden %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit class:'btn btn-secondary' %>
+  </div>
+<% end %>

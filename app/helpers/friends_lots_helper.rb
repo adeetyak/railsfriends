@@ -1,0 +1,2 @@
+module FriendsLotsHelper
+end

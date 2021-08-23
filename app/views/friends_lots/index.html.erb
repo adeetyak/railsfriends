@@ -1,0 +1,39 @@
+<% if user_signed_in? %>
+
+<h1>Friends List</h1>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead class= "table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Instagram</th>
+      <th > </th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @friends_lots.each do |friends_lot| %>
+  <% if friends_lot.user == current_user %>
+      <tr>
+        <td><%= link_to friends_lot.first_name + ' ' +friends_lot.last_name, friends_lot %>
+          </td>
+        <td><%= friends_lot.email %></td>
+        <td><%= friends_lot.mobile %></td>
+        <td><%= friends_lot.instagram %></td>
+        <td><%= link_to 'Delete', friends_lot, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %></td>
+          </tr>
+  <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Friend', new_friends_lot_path,class:"btn btn-secondary" %>
+<% else %>
+  <h1>Hello World!</h1>
+  This is my first rails webpage .
+<%end %>
